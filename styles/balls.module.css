@@ -1,43 +1,32 @@
 .container {
   gap: 10px;
-  max-width: 360px;
+  max-width: 365px;
   height: min-content;
   padding: 10px;
   flex-wrap: wrap;
   transition: all 0.25s ease;
   display: flex;
+  margin-bottom: calc(7rem + 20px);
+  justify-content: center;
 }
 
 @keyframes zoomIn {
   from {
-    transform: translateY(var(--size)) translateX(var(--size));
-  }
-}
-@keyframes margin {
-  from {
-    margin-left: calc(var(--size) * -1);
+    transform: translateY(var(--size)) translateX(calc(var(--size) * .5));
+    margin-left: calc(var(--size) * -.5);
+    margin-right: calc(var(--size) * -.5);
     opacity: 0;
   }
 }
 
 .container.many {
   gap: 5px;
-  max-width: 365px;
-}
-
-
-@media (max-width: 360px) {
-  .container {
-    gap: 3.96vw;
-    padding: 6.5vw;
-  }
-  .container.many {
-    gap:1.86vw;
-  }
+  max-width: 370px;
 }
 
 
 .ball {
+  transition: inherit;
   --size: 25px;
   width: var(--size);
   height: var(--size);
@@ -47,12 +36,6 @@
   flex-grow: 0;
   transform-origin: 50% 0;
   border-radius: 999px;
-}
-
-@media (max-width: 360px) {
-  .ball {
-    --size: 9vw
-  }
 }
 
 .ball:nth-child(4n + 1) {
@@ -66,10 +49,4 @@
 }
 .many .ball {
   --size: 20px;
-}
-
-@media (max-width: 360px) {
-  .many .ball {
-    --size: 8vw;
-  }
 }
