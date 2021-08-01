@@ -19,6 +19,7 @@ const HomePage = () => {
         <title>
           {balls == 0 ? "No" : balls} ball{balls == 1 ? "" : "s"}
         </title>
+        <meta name='description' content='balls' />
       </Head>
       <div className={styles.header}>{balls == 0 ? "No" : balls} ball{balls == 1 ? "" : "s"}</div>
       <BallCounter balls={balls} />
