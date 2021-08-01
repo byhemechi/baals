@@ -8,11 +8,11 @@ const Ball = () => (
 );
 
 const BallCounter: React.FunctionComponent<{ balls: number }> = ({ balls }) => (
-  <div className={[styles.container, balls > 100 ? styles.many : ''].join(' ').trim()}>
+  <div><div className={[styles.container, balls > 100 ? styles.many : ''].join(' ').trim()}>
     {[...new Uint8Array(balls ?? 0)].map((i, n) => (
       <Ball key={n} />
     ))}
-  </div>
+  </div></div>
 );
 
 export default BallCounter;
