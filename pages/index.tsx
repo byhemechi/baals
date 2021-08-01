@@ -20,7 +20,7 @@ const HomePage = () => {
           {balls == 0 ? "No" : balls} ball{balls == 1 ? "" : "s"}
         </title>
       </Head>
-      <div className={styles.header}>{balls} Balls</div>
+      <div className={styles.header}>{balls == 0 ? "No" : balls} ball{balls == 1 ? "" : "s"}</div>
       <BallCounter balls={balls} />
       <BallsContext.Provider
         value={{ balls, update: (v) => {
