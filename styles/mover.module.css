@@ -4,7 +4,7 @@
   justify-content: center;
   padding: 3rem 0;
   background: linear-gradient(to top, #111827 1em, transparent);
-  position: sticky;
+  /* position: sticky; */
   bottom: 0;
 }
 
@@ -21,7 +21,7 @@
 
 .button:disabled {
   cursor: default;
-  background: #aaa;
+  background: #1f2937;
   box-shadow: unset;
 }
 

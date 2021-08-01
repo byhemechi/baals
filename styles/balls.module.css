@@ -7,14 +7,13 @@
   flex-wrap: wrap;
   transition: all 0.25s ease;
   display: flex;
-  margin: 6rem 0;
 }
 
 @keyframes zoomIn {
   from {
-    margin-top: -100%;
-    margin-right: -100%;
-    transform: scale(0);
+    transform: translateY(var(--size)) translateX(var(--size));
+    margin-left: calc(var(--size) * -1);
+    opacity: 0;
   }
 }
 
@@ -24,25 +23,26 @@
 
 .ball {
   transition: inherit;
-  width: 25px;
-  height: 25px;
+  --size: 25px;
+  width: var(--size);
+  height: var(--size);
   display: inline-block;
-  animation: zoomIn .25s ease-out;
+  animation: zoomIn 0.25s cubic-bezier(0.17, 0.67, 0.33, 1.42);
   background: red;
   flex-grow: 0;
+  transform-origin: 50% 0;
   border-radius: 999px;
 }
 
-.ball:nth-child(4n+1) {
+.ball:nth-child(4n + 1) {
   background: #26f;
 }
-.ball:nth-child(4n+2) {
+.ball:nth-child(4n + 2) {
   background: #a0f;
 }
-.ball:nth-child(4n+3) {
+.ball:nth-child(4n + 3) {
   background: limegreen;
 }
 .many .ball {
-  width: 20px;
-  height: 20px;
+  --size: 20px;
 }

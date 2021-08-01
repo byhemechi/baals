@@ -19,16 +19,23 @@ const HomePage = () => {
         <title>
           {balls == 0 ? "No" : balls} ball{balls == 1 ? "" : "s"}
         </title>
-        <meta name='description' content='balls' />
+        <meta name="description" content="balls" />
       </Head>
-      <div className={styles.header}>{balls == 0 ? "No" : balls} ball{balls == 1 ? "" : "s"}</div>
+      <div className={styles.header}>
+        <button className={styles.resetButton} onClick={() => {localStorage.removeItem('balls'); setBalls(0)}}>
+          {balls == 0 ? "No" : balls} ball{balls == 1 ? "" : "s"}
+        </button>
+      </div>
       <BallCounter balls={balls} />
       <BallsContext.Provider
-        value={{ balls, update: (v) => {
-          let nb = Math.max(v, 0);
-          setBalls(nb);
-          localStorage.setItem('balls', JSON.stringify(nb))
-        } }}
+        value={{
+          balls,
+          update: (v) => {
+            let nb = Math.max(v, 0);
+            setBalls(nb);
+            localStorage.setItem("balls", JSON.stringify(nb));
+          },
+        }}
       >
         <BallMover />
       </BallsContext.Provider>
