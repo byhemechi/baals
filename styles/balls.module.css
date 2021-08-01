@@ -1,0 +1,48 @@
+.container {
+  gap: 10px;
+  max-width: 350px;
+  justify-content: flex-start;
+  align-items: flex-start;
+  height: min-content;
+  flex-wrap: wrap;
+  transition: all 0.25s ease;
+  display: flex;
+  margin: 6rem 0;
+}
+
+@keyframes zoomIn {
+  from {
+    margin-top: -100%;
+    margin-right: -100%;
+    transform: scale(0);
+  }
+}
+
+.container.many {
+  gap: 5px;
+}
+
+.ball {
+  transition: inherit;
+  width: 25px;
+  height: 25px;
+  display: inline-block;
+  animation: zoomIn .25s ease-out;
+  background: red;
+  flex-grow: 0;
+  border-radius: 999px;
+}
+
+.ball:nth-child(4n+1) {
+  background: #26f;
+}
+.ball:nth-child(4n+2) {
+  background: #a0f;
+}
+.ball:nth-child(4n+3) {
+  background: limegreen;
+}
+.many .ball {
+  width: 20px;
+  height: 20px;
+}

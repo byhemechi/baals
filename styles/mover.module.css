@@ -1,0 +1,30 @@
+.container {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  padding: 3rem 0;
+  background: linear-gradient(to top, #111827 1em, transparent);
+  position: sticky;
+  bottom: 0;
+}
+
+.button {
+  padding: 10px 20px;
+  background: #26f;
+  color: #fff;
+  border: 0;
+  border-radius: 10px;
+  box-shadow: 0 5px 10px #0005;  
+  transition: all 0.25s ease;
+  cursor: pointer;
+}
+
+.button:disabled {
+  cursor: default;
+  background: #aaa;
+  box-shadow: unset;
+}
+
+.button:not(:disabled):hover {
+  background: #48f
+}

@@ -1,7 +1,18 @@
-const Ball = () => <div style={{ background: 'red', width: '20px', height: '20px', borderRadius: '9999px' }} />;
+import React from "react";
+import styles from "../styles/balls.module.css";
 
-const BallCounter: React.FunctionComponent<{ balls: number }> = ({ balls }) => <div style={{ display: 'flex', flexWrap: 'wrap', maxWidth: '500px' }}>
-    {[...new Uint8Array(balls ?? 0)].map((i, n) => <Ball key={n} />)}
-</div>;
+const Ball = () => (
+  <div
+    className={styles.ball}
+  />
+);
+
+const BallCounter: React.FunctionComponent<{ balls: number }> = ({ balls }) => (
+  <div className={[styles.container, balls > 100 ? styles.many : ''].join(' ').trim()}>
+    {[...new Uint8Array(balls ?? 0)].map((i, n) => (
+      <Ball key={n} />
+    ))}
+  </div>
+);
 
 export default BallCounter;
